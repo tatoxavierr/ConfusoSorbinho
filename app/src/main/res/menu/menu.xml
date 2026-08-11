@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/id003"
+        android:icon="@drawable/stop_circle_48px"
+        android:title="para a musica pra gente"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/id002"
+        android:icon="@drawable/pause_circle_48px"
+        android:title="pausa a musica pra gente"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/id001"
+        android:icon="@drawable/play_circle_48px"
+        android:title="toca uma pra gente"
+        app:showAsAction="always" />
+</menu>

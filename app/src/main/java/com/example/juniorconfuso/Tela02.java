@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,9 @@ public class Tela02 extends AppCompatActivity implements MediaPlayer.OnCompletio
     private MediaPlayer mediaPlayer;
     private SeekBar seekBar;
     private Handler handler;
+    private int musica, indiceLista;
+    private Cardview card1, card2, card3, card4, card5
+    private TextView textoMusicaSeleciona, textoMusicaTocando;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,7 @@ public class Tela02 extends AppCompatActivity implements MediaPlayer.OnCompletio
         if(id == R.id.id001){
             if(mediaPlayer == null){
                 mediaPlayer = MediaPlayer.create(this, R.raw.forrodofarol_quincasmoreira);
+                textoMusicaTocando.setText("Música tocando: "+lista.get(indiceLista).get )
                 mediaPlayer.setOnCompletionListener(this);
                 seekBar.setMax(mediaPlayer.getDuration());
                 handler.post(this);
@@ -81,6 +86,20 @@ public class Tela02 extends AppCompatActivity implements MediaPlayer.OnCompletio
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu, menu);
         return true;
+
+        card1 = findViewById(R.id.card1);
+        card1.setOnClickListener(this);
+        card2 = findViewById(R.id.card2);
+        card2.setOnClickListener(this);
+        card3 = findViewById(R.id.card3);
+        card3.setOnClickListener(this);
+        card4 = findViewById(R.id.card4);
+        card4.setOnClickListener(this);
+        card5 = findViewById(R.id.card5);
+        card5.setOnClickListener(this);
+        textoMusicaSeleciona = findViewById(R.id.textView);
+        textoMusicaTocando = findViewById(R.id.textView2);
+
 
 
 
@@ -120,4 +139,5 @@ public class Tela02 extends AppCompatActivity implements MediaPlayer.OnCompletio
         mp = null;
         seekBar.setProgress(0);
     }
+
 }
